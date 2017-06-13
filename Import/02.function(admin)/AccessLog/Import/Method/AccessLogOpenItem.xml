@@ -1,0 +1,34 @@
+﻿<AML>
+ <Item type="Method" id="F37E4B032CF148D1AB20E6DC7EE89AC7" action="add">
+  <comments>open access log</comments>
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[// access log item open
+//
+// trigger: AccessLog Item Onload
+//
+var arasObj = top.aras;
+var targetItemId = document.thisItem.getProperty("item_id_string");
+var targetItemType = document.thisItem.getProperty("item_type");
+var targetItemName = document.thisItem.getProperty("item_keyed_name_string");
+
+//get access item
+var targetItem = new Item(targetItemType,"get");
+targetItem.setID(targetItemId);
+targetItem = targetItem.apply();
+
+//NG:Warn output
+if (!targetItem.isError()) 
+{
+    arasObj.uiShowItem(targetItemType,targetItemId);
+    arasObj.uiCloseWindowEx(document.thisItem.getID);
+}
+else
+{
+    arasObj.AlertError("\""+targetItemName + "\""+" item has been deleted");
+    arasObj.uiCloseWindowEx(document.thisItem.getID);
+}
+]]></method_code>
+  <method_type>JavaScript</method_type>
+  <name>AccessLogOpenItem</name>
+ </Item>
+</AML>
