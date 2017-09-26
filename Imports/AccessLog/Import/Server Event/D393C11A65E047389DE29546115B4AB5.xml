@@ -1,12 +1,14 @@
 ﻿<AML>
- <Item type="Server Event" id="DA2E23D9673B4C7FAD0AE4E29AD3F52B" action="add">
+ <Item type="Server Event" id="D393C11A65E047389DE29546115B4AB5" action="add">
+  <event_version>version_1</event_version>
+  <is_required>0</is_required>
   <related_id keyed_name="itemtype_onafterupdt_accessLog" type="Method">
    <Item type="Method" action="get" select="id">
     <name>itemtype_onafterupdt_accessLog</name>
    </Item>
   </related_id>
   <server_event>onAfterUpdate</server_event>
-  <sort_order>1152</sort_order>
+  <sort_order>1792</sort_order>
   <source_id keyed_name="ItemType" type="ItemType" name="ItemType">450906E86E304F55A34B3C0D65C097EA</source_id>
  </Item>
 </AML>

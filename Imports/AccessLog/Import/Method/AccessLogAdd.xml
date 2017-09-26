@@ -6,16 +6,16 @@
 //
 // Form event: OnUnload
 //
-
 var thisId = document.thisItem.getId();
 var thisType = document.thisItem.getType();
-var innovator = top.aras.newIOMInnovator();
+var innovator = top.aras.IomInnovator;
 
 // AccessLogAdds
-var thisItem = top.aras.newIOMItem();
-thisItem.setType(thisType);
-thisItem.setAction("AccessLogAdds");
-thisItem.setId(thisId);
+var thisItem = innovator.newItem(thisType, "AccessLogAdds");
+// var thisItem = top.aras.newIOMItem();
+// thisItem.setType(thisType);
+// thisItem.setAction("AccessLogAdds");
+thisItem.setID(thisId);
 thisItem = thisItem.apply();
 if (thisItem.isError()) {
   return top.aras.AlertError(thisItem.getErrorString());

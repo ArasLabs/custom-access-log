@@ -1,6 +1,6 @@
 # Custom Access Log
 
-This project adds functionality to log View Form operation for any items: When, Who, What　items were viewed.
+This project adds functionality to log View Form operation for any items: When, Who, What items were viewed.
 
 Administrator easily can view the access logs as a list and can get statistical information from the logs by standard Simple Search.
 e.g. 
@@ -13,13 +13,17 @@ This project and the following release notes have been migrated from the old Ara
 
 Release | Notes
 --------|--------
+[v2](https://github.com/ArasLabs/custom-access-log/releases/tag/v2) | Build 2 was upgraded to support 11.0 SP11
 [v1](https://github.com/ArasLabs/custom-access-log/releases/tag/v1) | Build 1 is the first version. Instructions are described in the [ReadMe.pdf](../Documentation/AccessLogPackage-ReadMe-Japanese.png).
 
 #### Supported Aras Versions
 
 Project | Aras
 --------|------
+[v2](https://github.com/ArasLabs/custom-access-log/releases/tag/v2) | 11.0 SP9-SP11
 [v1](https://github.com/ArasLabs/custom-access-log/releases/tag/v1) | 9.4, 10.0
+
+>Though [v2](https://github.com/ArasLabs/custom-access-log/releases/tag/v2) was tested using 11.0 SP11, it should work in older releases of 11 as well.
 
 ## Installation
 
@@ -40,14 +44,11 @@ Project | Aras
   * _Note: You must login as root for the package import to succeed!_
 4. Enter the package name in the TargetRelease field.
   * Optional: Enter a description in the Description field.
-5. Enter the path to your local `..\Imports\00.core1(root)\imports.mf` file in the Manifest File field.
+5. Enter the path to your local `..\Imports\imports.mf` file in the Manifest File field.
 6. Select all in the Available for Import field.
 7. Select Type = **Merge** and Mode = **Thorough Mode**.
 8. Click **Import** in the top left corner.
-9. Repeat Steps 5-8 for the following import paths:
-  - `..\Imports\01.core2(root)\imports.mf`
-  - `..\Imports\02.function(admin)\imports.mf`
-10. Close the Aras Package Import tool.
+9. Close the Aras Package Import tool
 
 ## Usage
 

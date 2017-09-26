@@ -10,11 +10,11 @@
   <is_multi_valued>0</is_multi_valued>
   <is_required>0</is_required>
   <label xml:lang="en">Access Log</label>
-  <name>is_access_log</name>
   <range_inclusive>0</range_inclusive>
   <readonly>0</readonly>
   <sort_order>10000</sort_order>
   <source_id keyed_name="ItemType" type="ItemType" name="ItemType">450906E86E304F55A34B3C0D65C097EA</source_id>
   <track_history>0</track_history>
+  <name>is_access_log</name>
  </Item>
 </AML>

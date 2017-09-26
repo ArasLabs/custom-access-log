@@ -1,0 +1,142 @@
+﻿<AML>
+ <Item type="Form" id="91C899C570A54AB98A798DF24D5F1D89" action="add">
+  <category_form>0</category_form>
+  <height>234</height>
+  <stylesheet><![CDATA[../styles/default.css]]></stylesheet>
+  <width>699</width>
+  <name>Access Log</name>
+  <Relationships>
+   <Item type="Body" id="D0A70F9AD25A4699ACFE8A45999DCD87" action="add">
+    <bg_color>#FFFFFF</bg_color>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="Access Log" type="Form">91C899C570A54AB98A798DF24D5F1D89</source_id>
+    <Relationships>
+     <Item type="Field" id="5570EDE3B3054E58BC080B454B6C8322" action="add">
+      <border_width>0</border_width>
+      <display_length_unit>px</display_length_unit>
+      <field_type>textarea</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Item Gen</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="item_generation" type="Property">C1F86552ABFF4C0594902963EAEBBA12</propertytype_id>
+      <sort_order>512</sort_order>
+      <source_id keyed_name="D0A70F9AD25A4699ACFE8A45999DCD87" type="Body">D0A70F9AD25A4699ACFE8A45999DCD87</source_id>
+      <tab_index>3700</tab_index>
+      <tab_stop>1</tab_stop>
+      <textarea_cols>350</textarea_cols>
+      <textarea_rows>50</textarea_rows>
+      <x>190</x>
+      <y>165</y>
+      <name>item_generation</name>
+     </Item>
+     <Item type="Field" id="92649C3C582F40D2AF070921FFE26F06" action="add">
+      <display_length_unit>px</display_length_unit>
+      <field_type>html</field_type>
+      <html_code><![CDATA[<span id='ITEM_INFO_INTERNAL_SPAN'/>
+<script>
+  populate_ITEM_INFO_INTERNAL_SPAN = function()
+  {
+    document.getElementById('ITEM_INFO_INTERNAL_SPAN').innerHTML = aras.uiGetItemInfoTable(document.itemType);
+  }
+  window.addEventListener('load', populate_ITEM_INFO_INTERNAL_SPAN);
+</script>]]></html_code>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <list_no_blank>0</list_no_blank>
+      <sort_order>640</sort_order>
+      <source_id keyed_name="D0A70F9AD25A4699ACFE8A45999DCD87" type="Body">D0A70F9AD25A4699ACFE8A45999DCD87</source_id>
+      <tab_stop>0</tab_stop>
+      <x>0</x>
+      <y>0</y>
+      <name>item_info</name>
+     </Item>
+     <Item type="Field" id="8DCB91B8446846AD9BBA767D2DE9180B" action="add">
+      <border_width>0</border_width>
+      <display_length_unit>px</display_length_unit>
+      <field_type>textarea</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Item Keyed Name</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="item_keyed_name_string" type="Property">B1663EB531404535B1399A5DBA3C0BFF</propertytype_id>
+      <sort_order>128</sort_order>
+      <source_id keyed_name="D0A70F9AD25A4699ACFE8A45999DCD87" type="Body">D0A70F9AD25A4699ACFE8A45999DCD87</source_id>
+      <tab_index>15</tab_index>
+      <tab_stop>1</tab_stop>
+      <textarea_cols>350</textarea_cols>
+      <textarea_rows>50</textarea_rows>
+      <x>190</x>
+      <y>10</y>
+      <name>item_keyed_name_string</name>
+     </Item>
+     <Item type="Field" id="648106AA109845B59E8523CFDD19CFDF" action="add">
+      <border_width>0</border_width>
+      <display_length_unit>px</display_length_unit>
+      <field_type>text</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Item Major Rev</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="item_major_rev" type="Property">5B9A5E21FF8C4F43A8158CEB303407D0</propertytype_id>
+      <sort_order>384</sort_order>
+      <source_id keyed_name="D0A70F9AD25A4699ACFE8A45999DCD87" type="Body">D0A70F9AD25A4699ACFE8A45999DCD87</source_id>
+      <tab_index>3694</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>190</x>
+      <y>125</y>
+      <name>item_major_rev</name>
+     </Item>
+     <Item type="Field" id="52FAF2927A9A4E77BED3040E94B7E0C3" action="add">
+      <border_width>0</border_width>
+      <display_length>64</display_length>
+      <display_length_unit>px</display_length_unit>
+      <field_type>text</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Item Type</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="item_type" type="Property">DBFAB70DC73D4A39B369F60103E5E39B</propertytype_id>
+      <sort_order>256</sort_order>
+      <source_id keyed_name="D0A70F9AD25A4699ACFE8A45999DCD87" type="Body">D0A70F9AD25A4699ACFE8A45999DCD87</source_id>
+      <tab_index>40</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>190</x>
+      <y>85</y>
+      <name>item_type</name>
+     </Item>
+    </Relationships>
+   </Item>
+   <Item type="Form Event" id="FADCC0E3888141ED9AD3AF5832237853" action="add">
+    <form_event>onload</form_event>
+    <related_id keyed_name="AccessLogOpenItem" type="Method">
+     <Item type="Method" action="get" select="id">
+      <name>AccessLogOpenItem</name>
+     </Item>
+    </related_id>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="Access Log" type="Form">91C899C570A54AB98A798DF24D5F1D89</source_id>
+   </Item>
+  </Relationships>
+ </Item>
+</AML>

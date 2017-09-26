@@ -1,0 +1,88 @@
+﻿<AML>
+ <Item type="Method" id="A7D96967CCC946E082390A3E4BD322DF" action="add">
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[// Used as an action from an onUnload form event on ItemTypes that have access
+// logs enabled
+
+    Innovator inn = this.getInnovator();
+    Item aml_cmd; 
+    
+    // Add AccessLog and Delete Old Log
+    string thisID = this.getID();
+    string thisType = this.getType();
+    
+    if (thisID == "" || thisType == "")
+    {
+        return this;
+    }
+    
+    string userID = inn.getUserID();
+
+    // Get this item
+    string selectProps = "id,config_id,current_state,classification,generation,major_rev,keyed_name";
+    
+    aml_cmd = this.newItem(thisType, "get");
+    aml_cmd.setID(thisID);
+    aml_cmd.setAttribute("doGetItem", "0");
+    aml_cmd.setAttribute("serverEvents", "0");
+    aml_cmd.setAttribute("select", selectProps);
+    Item thisItem = aml_cmd.apply();
+    
+    aml_cmd = AddAccessLogItem(userID, ref thisItem);
+    
+    if (aml_cmd.isError())
+    {
+        return aml_cmd;
+    }
+    
+    return this;
+}
+
+private Item AddAccessLogItem(string userID, ref Item thisItem)
+{
+    // UtcTime
+    DateTime utcNow = System.DateTime.UtcNow;
+    // CCO.Utilities.WriteDebug("accesslog.log", utcNow);
+    
+    string tmpPtrn = "yyyy-MM-ddTHH:mm:ss";
+    string utcNowStr = utcNow.ToString(tmpPtrn, DateTimeFormatInfo.InvariantInfo);
+    I18NSessionContext sCntxt = this.getInnovator().getI18NSessionContext();
+    // CurrentTime
+    string neutralNow = sCntxt.ConvertUtcDateTimeToNeutral(utcNowStr, tmpPtrn);
+    
+    string whereStr = "[Access_Log].source_id='" + userID + "'" + 
+        "and [Access_Log].item_id_string='" + thisItem.getID() + "'" +
+        "and [Access_Log].item_generation='" + thisItem.getProperty("generation", "") + "'";
+    
+    Item accessLogItem = this.newItem("Access Log", "add");
+    accessLogItem.setAttribute("serverEvents", "0");
+    accessLogItem.setAttribute("where", whereStr);
+    accessLogItem.setProperty("source_id", userID);
+    accessLogItem.setProperty("insert_date", neutralNow);
+    accessLogItem.setProperty("item_type", thisItem.getType());
+    accessLogItem.setProperty("item_id_string", thisItem.getID());
+    accessLogItem.setProperty("item_keyed_name_string", thisItem.getProperty("keyed_name", ""));
+    accessLogItem.setProperty("item_config_id_string", thisItem.getProperty("config_id",""));
+    accessLogItem.setProperty("item_generation", thisItem.getProperty("generation"));
+    accessLogItem.setProperty("item_major_rev", thisItem.getProperty("major_rev", ""));
+    
+    Aras.Server.Security.Identity adminIdentity = Aras.Server.Security.Identity.GetByName("Administrators");
+    bool PermissionWasSet = Aras.Server.Security.Permissions.GrantIdentity(adminIdentity);
+    
+    // Add accesslog
+    accessLogItem = accessLogItem.apply();
+    if (accessLogItem.isError())
+    {
+        return accessLogItem;
+    }
+    
+    if (PermissionWasSet == true)
+    {
+        Aras.Server.Security.Permissions.RevokeIdentity(adminIdentity);
+    }
+    
+    return accessLogItem;]]></method_code>
+  <method_type>C#</method_type>
+  <name>AccessLogAdds</name>
+ </Item>
+</AML>

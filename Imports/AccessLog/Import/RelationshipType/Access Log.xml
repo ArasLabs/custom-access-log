@@ -9,7 +9,6 @@
   <inc_related_key_name>1</inc_related_key_name>
   <is_list_type>0</is_list_type>
   <label xml:lang="en">Access Log</label>
-  <name>Access Log</name>
   <new_show_related>0</new_show_related>
   <related_notnull>0</related_notnull>
   <related_option>2</related_option>
@@ -26,14 +25,15 @@
     <is_relationship>1</is_relationship>
     <is_versionable>0</is_versionable>
     <label xml:lang="en">Access Log</label>
-    <label_plural xml:lang="en">Access Log</label_plural>
+    <label_plural xml:lang="en">Access Logs</label_plural>
     <large_icon>../images/Icons/32x32/32x32_viewers.gif</large_icon>
-    <name>Access Log</name>
     <open_icon>../images/Icons/16x16/16x16_viewers.gif</open_icon>
     <revisions keyed_name="Default" type="Revision">7FE395DD8B9F4E1090756A34B733D75E</revisions>
     <show_parameters_tab>1</show_parameters_tab>
+    <structure_view>tabs off</structure_view>
     <unlock_on_logout>0</unlock_on_logout>
     <use_src_access>1</use_src_access>
+    <name>Access Log</name>
     <Relationships>
      <Item type="Property" id="87A2925422EE40C3B0A5FCFB79E9E1B6" action="add">
       <column_alignment>left</column_alignment>
@@ -45,12 +45,12 @@
       <is_multi_valued>0</is_multi_valued>
       <is_required>0</is_required>
       <label xml:lang="en">Insert Date</label>
-      <name>insert_date</name>
       <range_inclusive>0</range_inclusive>
       <readonly>0</readonly>
       <sort_order>3828</sort_order>
       <source_id keyed_name="Access Log" type="ItemType" name="Access Log">46664F2E3321489891B0F0F45A9E7B97</source_id>
       <track_history>0</track_history>
+      <name>insert_date</name>
      </Item>
      <Item type="Property" id="F9B435671DC846FA85A547F51703CD78" action="add">
       <column_alignment>left</column_alignment>
@@ -63,13 +63,13 @@
       <is_multi_valued>0</is_multi_valued>
       <is_required>0</is_required>
       <label xml:lang="en">Config ID</label>
-      <name>item_config_id_string</name>
       <range_inclusive>0</range_inclusive>
       <readonly>0</readonly>
       <sort_order>10</sort_order>
       <source_id keyed_name="Access Log" type="ItemType" name="Access Log">46664F2E3321489891B0F0F45A9E7B97</source_id>
       <stored_length>32</stored_length>
       <track_history>0</track_history>
+      <name>item_config_id_string</name>
      </Item>
      <Item type="Property" id="C1F86552ABFF4C0594902963EAEBBA12" action="add">
       <column_alignment>left</column_alignment>
@@ -82,13 +82,13 @@
       <is_multi_valued>0</is_multi_valued>
       <is_required>0</is_required>
       <label xml:lang="en">Item Gen</label>
-      <name>item_generation</name>
       <range_inclusive>0</range_inclusive>
       <readonly>0</readonly>
       <sort_order>3700</sort_order>
       <source_id keyed_name="Access Log" type="ItemType" name="Access Log">46664F2E3321489891B0F0F45A9E7B97</source_id>
       <stored_length>80</stored_length>
       <track_history>0</track_history>
+      <name>item_generation</name>
      </Item>
      <Item type="Property" id="A28840196A494475B4A252143FE4089C" action="add">
       <column_alignment>left</column_alignment>
@@ -101,13 +101,13 @@
       <is_multi_valued>0</is_multi_valued>
       <is_required>0</is_required>
       <label xml:lang="en">Item ID</label>
-      <name>item_id_string</name>
       <range_inclusive>0</range_inclusive>
       <readonly>0</readonly>
       <sort_order>20</sort_order>
       <source_id keyed_name="Access Log" type="ItemType" name="Access Log">46664F2E3321489891B0F0F45A9E7B97</source_id>
       <stored_length>32</stored_length>
       <track_history>0</track_history>
+      <name>item_id_string</name>
      </Item>
      <Item type="Property" id="B1663EB531404535B1399A5DBA3C0BFF" action="add">
       <column_alignment>left</column_alignment>
@@ -120,13 +120,13 @@
       <is_multi_valued>0</is_multi_valued>
       <is_required>0</is_required>
       <label xml:lang="en">Item Keyed Name</label>
-      <name>item_keyed_name_string</name>
       <range_inclusive>0</range_inclusive>
       <readonly>0</readonly>
       <sort_order>15</sort_order>
       <source_id keyed_name="Access Log" type="ItemType" name="Access Log">46664F2E3321489891B0F0F45A9E7B97</source_id>
       <stored_length>128</stored_length>
       <track_history>0</track_history>
+      <name>item_keyed_name_string</name>
      </Item>
      <Item type="Property" id="5B9A5E21FF8C4F43A8158CEB303407D0" action="add">
       <column_alignment>left</column_alignment>
@@ -139,13 +139,13 @@
       <is_multi_valued>0</is_multi_valued>
       <is_required>0</is_required>
       <label xml:lang="en">Item Major Rev</label>
-      <name>item_major_rev</name>
       <range_inclusive>0</range_inclusive>
       <readonly>0</readonly>
       <sort_order>3694</sort_order>
       <source_id keyed_name="Access Log" type="ItemType" name="Access Log">46664F2E3321489891B0F0F45A9E7B97</source_id>
       <stored_length>8</stored_length>
       <track_history>0</track_history>
+      <name>item_major_rev</name>
      </Item>
      <Item type="Property" id="DBFAB70DC73D4A39B369F60103E5E39B" action="add">
       <column_alignment>left</column_alignment>
@@ -158,47 +158,42 @@
       <is_multi_valued>0</is_multi_valued>
       <is_required>0</is_required>
       <label xml:lang="en">Item Type</label>
-      <name>item_type</name>
       <range_inclusive>0</range_inclusive>
       <readonly>0</readonly>
       <sort_order>40</sort_order>
       <source_id keyed_name="Access Log" type="ItemType" name="Access Log">46664F2E3321489891B0F0F45A9E7B97</source_id>
       <stored_length>64</stored_length>
       <track_history>0</track_history>
+      <name>item_type</name>
      </Item>
-     <Item type="TOC Access" id="C63D5AFF746F4DD78BAAEBE9A2057D07" action="add">
-      <category>Administration</category>
+     <Item type="View" id="D9AF9C242D514E5D8398C8C5BA7465FE" action="add">
+      <client>js</client>
+      <related_id keyed_name="Access Log" type="Form">91C899C570A54AB98A798DF24D5F1D89</related_id>
+      <role keyed_name="World" type="Identity">
+       <Item type="Identity" action="get" select="id">
+        <name>World</name>
+       </Item>
+      </role>
+      <show_ssvc>0</show_ssvc>
+      <sort_order>128</sort_order>
+      <source_id keyed_name="Access Log" type="ItemType" name="Access Log">46664F2E3321489891B0F0F45A9E7B97</source_id>
+      <type>default</type>
+     </Item>
+     <Item type="TOC Access" id="08D6C153F329414697DCE98E9C773829" action="add">
       <related_id keyed_name="Administrators" type="Identity">2618D6F5A90949BAA7E920D1B04C7EE1</related_id>
       <sort_order>128</sort_order>
       <source_id keyed_name="Access Log" type="ItemType" name="Access Log">46664F2E3321489891B0F0F45A9E7B97</source_id>
+      <category>Administration</category>
      </Item>
-    
     </Relationships>
    </Item>
   </relationship_id>
   <sort_order>512</sort_order>
   <source_id keyed_name="User" type="ItemType" name="User">45E899CD2859442982EB22BB2DF683E5</source_id>
+  <name>Access Log</name>
  </Item>
  <Item type="ItemType" id="46664F2E3321489891B0F0F45A9E7B97" action="edit">
   <Relationships>
-   <Item type="Property" action="edit" where="source_id='46664F2E3321489891B0F0F45A9E7B97' and name='behavior'">
-    <column_alignment>left</column_alignment>
-    <data_source keyed_name="Item Behavior">1585083C7438460F8FA48F4774505062</data_source>
-    <data_type>list</data_type>
-    <is_hidden>1</is_hidden>
-    <is_hidden2>1</is_hidden2>
-    <is_indexed>0</is_indexed>
-    <is_keyed>0</is_keyed>
-    <is_multi_valued>0</is_multi_valued>
-    <is_required>0</is_required>
-    <name>behavior</name>
-    <range_inclusive>0</range_inclusive>
-    <readonly>0</readonly>
-    <sort_order>3310</sort_order>
-    <source_id keyed_name="Access Log" type="ItemType" name="Access Log">46664F2E3321489891B0F0F45A9E7B97</source_id>
-    <stored_length>64</stored_length>
-    <track_history>0</track_history>
-   </Item>
    <Item type="Property" action="edit" where="source_id='46664F2E3321489891B0F0F45A9E7B97' and name='created_on'">
     <column_alignment>left</column_alignment>
     <column_width>120</column_width>
@@ -210,7 +205,6 @@
     <is_multi_valued>0</is_multi_valued>
     <is_required>1</is_required>
     <label xml:lang="en">Access Date</label>
-    <name>created_on</name>
     <order_by>0</order_by>
     <pattern>short_date_time</pattern>
     <range_inclusive>0</range_inclusive>
@@ -218,22 +212,7 @@
     <sort_order>5</sort_order>
     <source_id keyed_name="Access Log" type="ItemType" name="Access Log">46664F2E3321489891B0F0F45A9E7B97</source_id>
     <track_history>0</track_history>
-   </Item>
-   <Item type="Property" action="edit" where="source_id='46664F2E3321489891B0F0F45A9E7B97' and name='generation'">
-    <column_alignment>left</column_alignment>
-    <data_type>integer</data_type>
-    <is_hidden>1</is_hidden>
-    <is_hidden2>1</is_hidden2>
-    <is_indexed>0</is_indexed>
-    <is_keyed>0</is_keyed>
-    <is_multi_valued>0</is_multi_valued>
-    <is_required>0</is_required>
-    <name>generation</name>
-    <range_inclusive>0</range_inclusive>
-    <readonly>1</readonly>
-    <sort_order>2432</sort_order>
-    <source_id keyed_name="Access Log" type="ItemType" name="Access Log">46664F2E3321489891B0F0F45A9E7B97</source_id>
-    <track_history>0</track_history>
+    <name>created_on</name>
    </Item>
    <Item type="Property" action="edit" where="source_id='46664F2E3321489891B0F0F45A9E7B97' and name='related_id'">
     <column_alignment>left</column_alignment>
@@ -245,12 +224,12 @@
     <is_multi_valued>0</is_multi_valued>
     <is_required>0</is_required>
     <item_behavior>float</item_behavior>
-    <name>related_id</name>
     <range_inclusive>0</range_inclusive>
     <readonly>0</readonly>
     <sort_order>3182</sort_order>
     <source_id keyed_name="Access Log" type="ItemType" name="Access Log">46664F2E3321489891B0F0F45A9E7B97</source_id>
     <track_history>0</track_history>
+    <name>related_id</name>
    </Item>
    <Item type="Property" action="edit" where="source_id='46664F2E3321489891B0F0F45A9E7B97' and name='source_id'">
     <column_alignment>left</column_alignment>
@@ -265,12 +244,12 @@
     <is_required>0</is_required>
     <item_behavior>float</item_behavior>
     <label xml:lang="en">User</label>
-    <name>source_id</name>
     <range_inclusive>0</range_inclusive>
     <readonly>0</readonly>
     <sort_order>6</sort_order>
     <source_id keyed_name="Access Log" type="ItemType" name="Access Log">46664F2E3321489891B0F0F45A9E7B97</source_id>
     <track_history>0</track_history>
+    <name>source_id</name>
    </Item>
   </Relationships>
  </Item>

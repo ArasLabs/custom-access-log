@@ -1,0 +1,81 @@
+﻿<AML>
+ <Item type="Method" id="23B6B32A5E3F4AAEBB93999B6C46DE8C" action="add">
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[// Generic method: AccessLogSetTrackings
+// Trigger: Called from an onAfterUpdate method on ItemType
+
+    Innovator inn = this.getInnovator();
+    Item aml_cmd;
+    
+    string itemTypeID = this.getID();
+    bool isAccessLog = (this.getProperty("is_access_log", "0") == "1");
+    
+    // Get ID of Method
+    aml_cmd = inn.getItemByKeyedName("Method", "AccessLogAdd");
+    string addMethodID = aml_cmd.getID();
+    
+    // Add or remove Method from Form Events
+    aml_cmd = mergeEventToForms(itemTypeID, addMethodID, isAccessLog);
+    if (aml_cmd.isError())
+    {
+        return aml_cmd;
+    }
+    
+    return this;
+}
+
+private Item mergeEventToForms (string itemTypeID, string methodID, bool addTracking)
+{
+    // Get all forms and form events of this ItemType
+    string amlStr = "<Item type='View' action='get' select='sort_order,source_id,related_id'>" +
+                        "<source_id>" + itemTypeID + "</source_id>" +
+                        "<related_id>" +
+                            "<Item type='Form' action='get' select='name'/>" +
+                        "</related_id>" +
+                     "</Item>";
+                     
+    Item aml_cmd = this.newItem("", "");
+    aml_cmd.loadAML(amlStr);
+    Item itemTypeViews = aml_cmd.apply();
+    if (itemTypeViews.isError())
+    {
+        return itemTypeViews;
+    }
+    
+    for (int i = 0; i < itemTypeViews.getItemCount(); i++)
+    {
+        Item formItem = itemTypeViews.getItemByIndex(i).getRelatedItem();
+        string formID = formItem.getID();
+        
+        // is_access_log=1; merge
+        // is_access_log=0; delete
+        string action = "merge";
+        if (!addTracking)
+        {
+            action = "delete";
+        }
+        
+        amlStr = "[Form_Event].source_id='" + formID + "' and [Form_Event].related_id='" + methodID + "'";
+        aml_cmd = this.newItem("Form Event", action);
+        aml_cmd.setAttribute("where", amlStr);
+        
+        if (action == "merge")
+        {
+            aml_cmd.setProperty("source_id", formID);
+            aml_cmd.setProperty("related_id", methodID);
+            aml_cmd.setProperty("form_event", "onunload");
+        }
+        
+        aml_cmd = aml_cmd.apply();
+        
+        if (aml_cmd.isError())
+        {
+            return aml_cmd;
+        }
+    }
+    
+    return this;]]></method_code>
+  <method_type>C#</method_type>
+  <name>AccessLogSetTrackings</name>
+ </Item>
+</AML>
